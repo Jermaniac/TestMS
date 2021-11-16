@@ -6,6 +6,7 @@ function App() {
 
   // Get prices every 3 seconds
   const MILISECONDS_TO_FETCH_DATA = 3000
+  const CRYPTOCURRENCY_TO_SHOW = 10
   const [getPrices, setPrices] = useState<Price[]>([])
 
   // Instead of using mocks of prices I am using an API that provides prices of cryptocurrency
@@ -28,7 +29,7 @@ function App() {
   },[]);
 
   const dataParserFromEndpointToPrice = (dataToParse : PricesFromEndPoint) : Price[]=> {
-    return dataToParse.data.map( (data : PriceFromEndPoint) => ({
+    return dataToParse.data.splice(0,CRYPTOCURRENCY_TO_SHOW).map( (data : PriceFromEndPoint) => ({
       id: data.id,
       name: data.slug,
       // Since messari endpoint does not return an ask price nor bid(as far as I am concerned) but return an unique price

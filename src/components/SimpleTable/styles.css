@@ -6,10 +6,11 @@
     margin: 30px;
 }
 
-.table {
-    border-collapse: collapse;
+th,td {
+    border: 1px solid black;
 }
 
-.col {
-    border: 1px solid black;
+
+.col-container {
+    text-align: end;
 }
