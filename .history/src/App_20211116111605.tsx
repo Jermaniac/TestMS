@@ -31,7 +31,7 @@ function App() {
     return dataToParse.data.map( (data : PriceFromEndPoint) => ({
       id: data.id,
       name: data.slug,
-      // Since messari endpoint does not return an ask price nor bid(as far as I am concerned) but return an unique price
+      // Since messari endpoint does not return an ask price nor bid(as far as I am concerned), but return an unique price
       // I assume that this is a mid price, so I calculate bid = mid price - 1% and ask = mid price + 1%
       bid: data.metrics.market_data.price_usd - data.metrics.market_data.price_usd * 0.01,
       ask: data.metrics.market_data.price_usd + data.metrics.market_data.price_usd * 0.01,
