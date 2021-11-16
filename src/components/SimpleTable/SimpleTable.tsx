@@ -30,9 +30,9 @@ export const SimpleTable = ( {prices} : PricesProps) => {
                         </tr>
                         { prices.map( (price) => (
                             <tr key={price.id}>
-                                <td className="col-container">{price.name}</td>
-                                <td className="col-container">{roundPrice(price.bid)}</td>
-                                <td className="col-container">{roundPrice(price.ask)}</td>
+                                <td className="col-values">{price.name}</td>
+                                <td className="col-values">{roundPrice(price.bid)}</td>
+                                <td className="col-values">{roundPrice(price.ask)}</td>
                             </tr>
                         ))
                         }
